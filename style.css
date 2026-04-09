@@ -1,164 +1,92 @@
-/* إعدادات الألوان العامة */
 :root {
-    --primary-bg: #2c3e50; /* لون العمود الجانبي */
-    --accent-color: #3498db;
-    --text-main: #333;
-    --text-light: #ecf0f1;
-    --body-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* خلفية الموقع */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --light: #ecf0f1;
 }
 
 body {
-    background: var(--body-bg);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.page-wrapper {
-    width: 100%;
-    max-width: 900px;
-}
-
-.resume-card {
-    background: #fff;
-    display: flex;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    overflow: hidden; /* لقص الزوايا */
-    min-height: 1000px;
-}
-
-/* العمود الجانبي */
-.sidebar {
-    width: 35%;
-    background-color: var(--primary-bg);
-    color: var(--text-light);
-    padding: 40px 20px;
-}
-
-.profile-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
     text-align: center;
-    margin-bottom: 30px;
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .profile-img {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 6px solid rgba(255, 255, 255, 0.1);
-    object-fit: cover;
-}
-
-.sidebar-title {
-    font-size: 18px;
-    border-bottom: 1px solid var(--accent-color);
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    color: var(--accent-color);
-}
-
-.sidebar-content section {
-    margin-bottom: 30px;
-}
-
-.sidebar-content p {
-    font-size: 14px;
-    margin-bottom: 8px;
-    line-height: 1.5;
-}
-
-.skill-tag {
-    background: rgba(255, 255, 255, 0.1);
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 3px;
-    border-radius: 4px;
-    font-size: 12px;
-}
-
-/* المحتوى الرئيسي */
-.main-body {
-    width: 65%;
-    padding: 50px 40px;
-}
-
-.header {
-    border-bottom: 3px solid var(--primary-bg);
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-}
-
-.header h1 {
-    font-size: 32px;
-    color: var(--primary-bg);
-}
-
-.header h2 {
-    font-size: 18px;
-    color: var(--accent-color);
-    font-weight: normal;
-}
-
-.main-title {
-    color: var(--primary-bg);
-    margin-bottom: 15px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.main-title::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #ddd;
-    margin-right: 15px;
-}
-
-.main-section {
-    margin-bottom: 35px;
-}
-
-.main-section p {
-    line-height: 1.7;
-    color: #555;
-    font-size: 15px;
-}
-
-.item {
+    border: 5px solid var(--accent);
     margin-bottom: 20px;
 }
+.bio-box {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: rgba(52, 152, 219, 0.05); /* لون خلفية خفيف جداً */
+    border-right: 4px solid #3498db; /* خط جانبي بلون الزر الأزرق */
+    text-align: right;
+    max-width: 450px; /* ليظل النص مجموعاً ومرتباً */
+}
 
-.item-header {
+.bio-box h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.bio-box p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+/* شبكة الأزرار في الرئيسية */
+.main-buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.nav-card {
+    background: var(--primary);
+    color: white;
+    padding: 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
 }
 
-.item-header strong {
-    color: #222;
+.nav-card i { font-size: 30px; color: var(--accent); }
+.nav-card:hover { transform: translateY(-5px); background: #34495e; }
+
+/* أزرار العودة */
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.item-header span {
-    color: #999;
-    font-size: 13px;
-}
-
-/* تجاوب الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .resume-card {
-        flex-direction: column;
-    }
-    .sidebar, .main-body {
-        width: 100%;
-    }
+.info-box {
+    text-align: right;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
 }
