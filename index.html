@@ -2,46 +2,49 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>الصفحة الرئيسية - سيرتي الذاتية</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>السيرة الذاتية - الرئيسية</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="hero">
-            <img src=" me.jpg.jpeg" alt=" مجلد جديد/me.jpg.jpeg" class="profile-img">
-            <h1>مازن علي بن علي الجيلاني</h1>
-            <p>أنا مطور ويب شغوف، وهنا تجد كل ما يخص مسيرتي المهنية.</p>
-            <div class="bio-box">
-    <h3>نبذة عني</h3>
-    <p>
-        أنا مطور ويب أهتم بأدق التفاصيل البرمجية، أسعى لابتكار حلول رقمية تجمع بين سهولة الاستخدام وجمال التصميم. 
-        أؤمن بأن التعلم المستمر هو مفتاح النجاح في هذا المجال المتطور.
-    </p>
-</div>
-        </header>
+    <div class="sidebar">
+        <div class="profile-nav">
+            <div class="nav-icon">👤</div>
+            <p>لوحة التحكم</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active-link">الرئيسية (سيرتي)</a></li>
+            <li><a href="contact.html">تواصل معي (صفحة 2)</a></li>
+            <li><a href="certificates.html">شهاداتي (صفحة 3)</a></li>
+            <li><a href="portfolio.html">أعمالي (صفحة 4)</a></li>
+            <li><a href="references.html">المعرفون (صفحة 5)</a></li>
+        </ul>
+    </div>
 
-        <div class="main-buttons-grid">
-            <a href="contact.html" class="nav-card">
-                <i class="fas fa-envelope"></i>
-                <span>تواصل معي</span>
-            </a>
+    <div class="main-content">
+        <div class="word-page">
+            <div class="header-line"></div>
+            <div class="profile-header">
+                <img src="profile.jpg" alt="صورتي الشخصية" class="profile-pic">
+                <div class="profile-text">
+                    <h1 class="hero-typing">الاسم الكامل هنا</h1>
+                    <p class="job-title">مطور ويب ومصمم أنظمة</p>
+                </div>
+            </div>
+            
+            <h3>النبذة الشخصية</h3>
+            <div class="info-box">
+                <p>خبير في تطوير الواجهات البرمجية وتصميم تجربة المستخدم. أمتلك شغفاً كبيراً في تحويل الأفكار إلى واقع رقمي ملموس باستخدام أحدث التقنيات العالمية.</p>
+            </div>
 
-            <a href="certificates.html" class="nav-card">
-                <i class="fas fa-certificate"></i>
-                <span>شهاداتي العلمية</span>
-            </a>
-
-            <a href="portfolio.html" class="nav-card">
-                <i class="fas fa-briefcase"></i>
-                <span>معرض أعمالي</span>
-            </a>
-
-            <a href="references.html" class="nav-card">
-                <i class="fas fa-users"></i>
-                <span>المراجع (للسؤال عني)</span>
-            </a>
+            <h3>المهارات الأساسية</h3>
+            <div class="skills-grid">
+                <div class="skill-item">تطوير HTML5 & CSS3</div>
+                <div class="skill-item">برمجة JavaScript</div>
+                <div class="skill-item">تصميم قوالب Word الاحترافية</div>
+                <div class="skill-item">إدارة قواعد البيانات</div>
+            </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

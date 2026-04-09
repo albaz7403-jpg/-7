@@ -1,92 +1,133 @@
 :root {
-    --primary: #2c3e50;
-    --accent: #3498db;
-    --light: #ecf0f1;
+    --primary-blue: #2b579a;
+    --dark-grey: #333;
+    --light-bg: #f3f2f1;
+    --white: #ffffff;
 }
+
+* { box-sizing: border-box; }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid var(--accent);
-    margin-bottom: 20px;
-}
-.bio-box {
-    margin-top: 15px;
-    padding: 15px;
-    background-color: rgba(52, 152, 219, 0.05); /* لون خلفية خفيف جداً */
-    border-right: 4px solid #3498db; /* خط جانبي بلون الزر الأزرق */
-    text-align: right;
-    max-width: 450px; /* ليظل النص مجموعاً ومرتباً */
-}
-
-.bio-box h3 {
-    font-size: 18px;
-    color: #2c3e50;
-    margin-bottom: 8px;
-}
-
-.bio-box p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #666;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background-color: var(--light-bg);
     margin: 0;
-}
-/* شبكة الأزرار في الرئيسية */
-.main-buttons-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.nav-card {
-    background: var(--primary);
-    color: white;
-    padding: 30px;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: 0.3s;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 18px;
+    flex-direction: row;
+    direction: rtl;
 }
 
-.nav-card i { font-size: 30px; color: var(--accent); }
-.nav-card:hover { transform: translateY(-5px); background: #34495e; }
+/* القائمة الجانبية (للكمبيوتر) */
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-blue);
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    transition: 0.3s;
+}
 
-/* أزرار العودة */
-.back-btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 20px;
-    background: var(--accent);
+.nav-menu { list-style: none; padding: 0; margin-top: 30px; }
+.nav-menu li { margin: 10px 0; }
+.nav-menu a {
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    display: block;
+    padding: 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
 }
 
-.info-box {
-    text-align: right;
-    background: #f9f9f9;
+.nav-menu a:hover, .active-link { 
+    background: #1a3a6d !important; 
+    border-right: 4px solid #fff; 
+}
+
+/* منطقة المحتوى */
+.main-content {
+    margin-right: 250px; /* مساحة للسيدبار في الكمبيوتر */
     padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.word-page {
+    background: var(--white);
+    width: 100%;
+    max-width: 800px;
+    min-height: 100vh;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.header-line { border-top: 6px solid var(--primary-blue); margin-bottom: 25px; }
+
+/* الصورة والترويسة */
+.profile-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    border-bottom: 2px solid #eee; 
+    padding-bottom: 20px; 
+    flex-wrap: wrap; /* للسماح بنزول العناصر في الجوال */
+}
+
+.profile-pic { 
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    border: 3px solid var(--primary-blue); 
+    object-fit: cover; 
+}
+
+.info-box { border-right: 5px solid var(--primary-blue); background: #f9f9f9; padding: 15px; margin: 15px 0; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.skill-item { background: #eee; padding: 10px; border-radius: 4px; text-align: center; }
+
+/* ========================================== */
+/* تعديلات خاصة بالجوال (Media Queries) */
+/* ========================================== */
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative; /* تصبح في الأعلى بدلاً من الجنب */
+        padding: 10px;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .nav-menu li { margin: 0; flex: 1 1 45%; } /* الأزرار تأخذ نصف العرض في الجوال */
+    .nav-menu a { padding: 8px; font-size: 13px; }
+
+    .main-content {
+        margin-right: 0; /* إلغاء الهامش في الجوال */
+        padding: 10px;
+    }
+
+    .word-page {
+        padding: 20px;
+        box-shadow: none; /* إزالة الظل لتوفير المساحة */
+    }
+
+    .profile-header {
+        justify-content: center;
+        text-align: center;
+    }
 }
