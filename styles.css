@@ -1,0 +1,100 @@
+:root{
+  --bg:#0b1220;
+  --paper:#0f1724;
+  --accent:#2ea6ff;
+  --muted:#9fb0c8;
+  --text:#e6eef8;
+  --card:#0b1228;
+  --container:1100px;
+  --radius:10px;
+  --shadow: 0 8px 24px rgba(2,6,23,0.6);
+  --font-stack: "Segoe UI", "Noto Kufi Arabic", Tahoma, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-stack);
+  background:linear-gradient(180deg,#071025 0%, #0b1220 100%);
+  color:var(--text);
+  padding:20px;
+}
+
+/* إطار يشبه صفحة وورد/شريحة بوربوينت */
+.doc-frame{
+  max-width:var(--container);
+  margin:0 auto;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+/* رأس يشبه شريط عنوان */
+.doc-header{
+  background:linear-gradient(90deg, rgba(46,166,255,0.12), rgba(46,166,255,0.04));
+  padding:18px 16px;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.doc-header.small{padding:12px 16px}
+
+/* تخطيط الرأس */
+.container{max-width:var(--container);margin:0 auto;padding:0 16px}
+.header-row{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.header-row .left{flex:0 0 auto}
+.header-row .center{flex:1 1 auto;text-align:right}
+.header-row .right{flex:0 0 auto}
+
+/* صورة واسم */
+.avatar{width:110px;height:110px;border-radius:6px;object-fit:cover;border:3px solid rgba(255,255,255,0.04)}
+.name{margin:0;font-size:1.6rem;font-weight:700}
+.role{margin:6px 0;color:var(--muted)}
+
+/* أزرار سريعة تحت الاسم */
+.quick-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.action{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,0.03);
+  font-weight:600;font-size:0.95rem;
+}
+.action svg{color:var(--accent)}
+.action span{display:inline-block}
+
+/* أيقونات رأسية */
+.icon-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--text);cursor:pointer;margin-left:6px}
+
+/* الجسم */
+.doc-body{display:grid;grid-template-columns:1fr 360px;gap:18px;padding:20px}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  border:1px solid rgba(255,255,255,0.03);
+  padding:16px;border-radius:10px;
+}
+.summary{grid-column:1 / span 1}
+.experience{grid-column:1}
+.skills{grid-column:2}
+
+/* مشاريع */
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.project{border:1px dashed rgba(255,255,255,0.03);padding:12px;border-radius:8px}
+.btn{display:inline-block;padding:8px 12px;background:var(--accent);color:#001; border-radius:8px;text-decoration:none;font-weight:700}
+
+/* الخريطة */
+.map-embed iframe{width:100%;height:320px;border:0;border-radius:8px;margin-top:12px}
+
+/* روابط العودة */
+.back-link{color:var(--muted);text-decoration:none;border:1px solid rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px}
+
+/* تذييل */
+.doc-footer{border-top:1px solid rgba(255,255,255,0.03);padding:12px 16px;color:var(--muted)}
+
+/* استجابة */
+@media (max-width:900px){
+  .doc-body{grid-template-columns:1fr;padding:12px}
+  .project-grid{grid-template-columns:1fr}
+  .avatar{width:88px;height:88px}
+  .quick-actions{justify-content:flex-start}
+}

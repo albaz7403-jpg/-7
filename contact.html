@@ -1,32 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>اتصل بي</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>معلومات الاتصال — مازن علي بن علي الجيلان</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <div class="sidebar">
-        <ul class="nav-menu">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="contact.html" class="active-link">تواصل معي</a></li>
-            <li><a href="certificates.html">شهاداتي</a></li>
-            <li><a href="portfolio.html">أعمالي</a></li>
-            <li><a href="references.html">المعرفون</a></li>
-        </ul>
-    </div>
-    <div class="main-content">
-        <div class="word-page">
-            <div class="header-line"></div>
-            <h1>معلومات التواصل</h1>
-            <div class="info-box">
-                <p>📧 البريد الإلكتروني: user@example.com</p>
-                <p>📞 رقم الهاتف: 00966500000000</p>
-                <p>📍 العنوان: المدينة، الدولة</p>
-                <p>🔗 لينكد إن: linkedin.com/in/username</p>
-            </div>
+<body class="dark">
+  <div class="doc-frame">
+    <header class="doc-header small">
+      <div class="container header-row">
+        <div class="center">
+          <h1>معلومات الاتصال</h1>
         </div>
-    </div>
-    <script src="script.js"></script>
+        <div class="right">
+          <a href="index.html" class="back-link">العودة للسيرة</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container doc-body">
+      <section class="card contact-card">
+        <h2>بيانات الاتصال</h2>
+        <ul class="contact-full">
+          <li><strong>الهاتف:</strong> <a href="tel:+9677XXXXXXX">+967 7X XXX XXXX</a></li>
+          <li><strong>البريد الإلكتروني:</strong> <a href="mailto:email@example.com">email@example.com</a></li>
+          <li><strong>الموقع الإلكتروني:</strong> <a href="https://your-website.com" target="_blank" rel="noopener">your-website.com</a></li>
+
+          <!-- تم إضافة رابط العنوان لعرض الموقع -->
+          <li>
+            <strong>العنوان:</strong>
+            <a href="location.html">مديرية الضالع، محافظة الضالع، اليمن (انقر لعرض الخريطة)</a>
+            &nbsp;·&nbsp;
+            <a href="https://www.google.com/maps?q=13.779863,44.709854" target="_blank" rel="noopener">عرض على خرائط Google</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="doc-footer">
+      <div class="container">
+        <p></p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
